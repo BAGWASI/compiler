@@ -1,0 +1,62 @@
+import re
+
+def is_valid_identifier(identifier):
+  """Returns True if the given identifier is valid, False otherwise."""
+
+  # Check if the identifier is empty.
+  if identifier == "":
+    return False
+
+  # Check if the identifier starts with a digit.
+  if identifier[0].isdigit():
+    return False
+
+  # Check if the identifier contains any invalid characters.
+  if re.search(r"[^\w_]", identifier):
+    return False
+
+  # Otherwise, the identifier is valid.
+  return True
+
+
+
+identifier = "my_identifier"
+
+if is_valid_identifier(identifier):
+  print("The identifier is valid.")
+else:
+  print("The identifier is not valid.")
+
+
+
+
+
+
+
+
+
+
+PART TWO;Using the Flex specification file, develop a simple lexer to validate identifiers.
+
+
+
+
+#include <stdio.h>
+#include "lex.yy.c"
+
+int main() {
+  char identifier[100];
+
+  printf("Enter an identifier: ");
+  scanf("%s", identifier);
+
+  yylex();
+
+  if (yylval.ival == IDENTIFIER_TOKEN) {
+    printf("The identifier is valid.\n");
+  } else {
+    printf("The identifier is not valid.\n");
+  }
+
+  return 0;
+}

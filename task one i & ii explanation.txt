@@ -1,0 +1,3 @@
+The above is based on the logic that we are simply looking for comment indicators in our respective python script line by line .
+
+No. Both syntax and lexical analysis was not used. This is because as for lexical analysis we deal with  breaking the code into tokens, such as keywords, identifiers, and literals. In the above example , we are not concerned with these lexical elements; we are simply treating each line as a whole string.As for Syntax analysis, it  involves understanding the structure of the code based on its grammar. we are not analyzing the structure of the code beyond checking for the presence of specific characters that commonly indicate comments.
